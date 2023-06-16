@@ -1,0 +1,41 @@
+.about{
+text-align: center;
+margin: 40px 0px;    
+}
+.item{
+    background-color:navajowhite;
+    color:navy
+}
+
+.complain{
+background-color: #ccc;
+text-align: center;
+margin-top: 40px;
+}
+
+.complain input {
+    width:98%;
+    margin-bottom: 10px;
+    height:25px
+}
+
+.complain button {
+background-color: navy;
+border:none;
+width:70px;
+height: 30px;
+color:white;
+border-radius:7px
+}
+
+.questionContainer{
+    margin-top:50px;
+}
+
+.aboutContainer{
+    background-image: url("../assets/imgs/wallpaperflare.com_wallpaper.jpg");
+    min-height: 100vh;
+    background-size: 100% 100%;
+
+}
+

@@ -1,0 +1,12 @@
+
+.home{
+background-color: gray;
+text-align: center;
+}
+
+.item{
+    background-color: #ccc;
+}
+.item button{
+    background-color: red;
+}
