@@ -1,6 +1,6 @@
 // pages
 import Home from "./pages/home";
-import About from "./pages/about"
+import About from "./pages/about";
 import Products from "./pages/products";
 import RootLayout from "./pages/rootLayout";
 // components
@@ -10,7 +10,12 @@ import NotFound from "./components/notFound";
 // styling
 import "./index.css";
 // routing
-import { createBrowserRouter , createRoutesFromElements ,Route ,RouterProvider} from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import ProductDetails from "./pages/productDetails";
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -23,15 +28,13 @@ const appRouter = createBrowserRouter(
         </Route>
         <Route element={<Products />} path="/products"></Route>
         <Route element={<ProductDetails />} path="/product/:id"></Route>
-        <Route path="*" element={<NotFound/>}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Route>
     </>
   )
 );
 function App() {
-  return (
-    <RouterProvider router={appRouter} />
-  );
+  return <RouterProvider router={appRouter} />;
 }
 
 export default App;

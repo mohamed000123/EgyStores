@@ -1,15 +1,15 @@
 /* nav bar */
-nav a{
-text-decoration: none;
-margin-right:30px;
-font-size:30px
+nav a {
+  text-decoration: none;
+  margin-right: 30px;
+  font-size: 30px;
 }
-nav{
-    background-color: #ccc;
+nav {
+  background-color: #ccc;
 }
 
-nav a.active{
-  color:gold;
+nav a.active {
+  color: gold;
   text-decoration: underline;
 }
 
@@ -17,10 +17,10 @@ nav a.active{
     color: blue;
 } */
 
-.nav-bar{
+.nav-bar {
   margin-bottom: 50px !important;
 }
 
-.navBar{
+.navBar {
   margin-bottom: 0px !important;
 }

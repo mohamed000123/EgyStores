@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Button from "@mui/material/Button";
 // styles
-import styles from "../styles/about.module.css"
+import styles from "../styles/about.module.css";
 const About = () => {
   console.log(Button);
   return (
@@ -13,7 +13,9 @@ const About = () => {
           </Button>
         </NavLink>
         <NavLink to="/about/faq">
-          <Button style={{ margin: "30px" }} variant="contained">faq</Button>
+          <Button style={{ margin: "30px" }} variant="contained">
+            faq
+          </Button>
         </NavLink>
         <Outlet />
       </div>

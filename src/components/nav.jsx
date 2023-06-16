@@ -1,4 +1,4 @@
-import { NavLink,Outlet} from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
@@ -18,9 +18,9 @@ import Button from "@mui/material/Button";
 
 const drawerWidth = 170;
 const navItems = [
-    <NavLink to="/">home</NavLink>,
-    <NavLink to="/products">products</NavLink>,
-    <NavLink to="/about">about</NavLink>
+  <NavLink to="/">home</NavLink>,
+  <NavLink to="/products">products</NavLink>,
+  <NavLink to="/about">about</NavLink>,
 ];
 
 function DrawerAppBar(props) {
