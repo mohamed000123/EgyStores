@@ -3,8 +3,16 @@ import { useEffect, useState } from "react";
 // styling
 import styles from "./login.module.css";
 // routing
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink, Navigate ,useNavigate} from "react-router-dom";
 const Login = () => {
+// logged in user redirect
+const navigate = useNavigate();
+useEffect(() => {
+  const userid = localStorage.getItem("user_id");
+  if (userid) {
+    navigate("/");
+  }
+}, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [matchFound, setMatchFound] = useState(false);
@@ -14,8 +22,6 @@ const Login = () => {
   if (JSON.parse(localStorage.getItem("users")) != null) {
     usersArray = JSON.parse(localStorage.getItem("users"));
   }
-  console.log(usersArray);
-
   // login
   function login(e) {
     e.preventDefault();
@@ -31,12 +37,10 @@ const Login = () => {
       alert("wrong password or email");
     }
   }
-  //  redirecting already logged in user
   useEffect(() => {
-    window.history.replaceState(null, "", "/home");
   }, [isLoggedIn]);
   if (matchFound) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
   return (

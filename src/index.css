@@ -1,8 +1,13 @@
 /* nav bar */
-nav a {
+nav a , nav button{
   text-decoration: none;
   margin-right: 30px;
   font-size: 30px;
+  color: Navy;
+}
+nav button{
+background-color: transparent;
+border:none;
 }
 nav {
   background-color: #ccc;

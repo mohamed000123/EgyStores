@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Navigate, Outlet, useNavigate } from "react-router-dom";
 import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
@@ -15,18 +15,24 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-
-
-const drawerWidth = 170;
-const navItems = [
-  <NavLink to="/home">Home</NavLink>,
-  <NavLink to="/products">Products</NavLink>,
-  <NavLink to="/cart">Cart</NavLink>,                             
-  <NavLink to="/about">About</NavLink>,               
-  <NavLink to="/">Logout</NavLink>,               
-];
+// react
 
 function Nav(props) {
+  const navigate = useNavigate()
+  const drawerWidth = 170;
+  const navItems = [
+    <NavLink to="/">Home</NavLink>,
+    <NavLink to="/products">Products</NavLink>,
+    <NavLink to="/cart">Cart</NavLink>,
+    <NavLink to="/about">About</NavLink>,
+    <button className="logoutBtn" onClick={logout}>Logout</button>,
+  ];
+ function logout() {
+   localStorage.removeItem("user_id");
+   navigate("/login")
+ }
+
+
   const { window ,page} = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 

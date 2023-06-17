@@ -3,8 +3,16 @@ import styles from "./login.module.css";
 // react
 import { useEffect, useState } from "react";
 // routing
-import {  Navigate , NavLink} from "react-router-dom";
+import {  Navigate , NavLink ,useNavigate} from "react-router-dom";
 const Signup = () => {
+// logged in user redirect
+const navigate = useNavigate();
+useEffect(() => {
+  const userid = localStorage.getItem("user_id");
+  if (userid) {
+    navigate("/");
+  }
+}, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [accountCheck, setAccountCheck] = useState(false);
@@ -34,7 +42,7 @@ const Signup = () => {
     }
   }
   if (accountCheck) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
   return (
     <>
