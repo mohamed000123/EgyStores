@@ -3,16 +3,16 @@ import styles from "./login.module.css";
 // react
 import { useEffect, useState } from "react";
 // routing
-import {  Navigate , NavLink ,useNavigate} from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 const Signup = () => {
-// logged in user redirect
-const navigate = useNavigate();
-useEffect(() => {
-  const userid = localStorage.getItem("user_id");
-  if (userid) {
-    navigate("/");
-  }
-}, []);
+  //logged in user redirect
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userid = localStorage.getItem("user_id");
+    if (userid) {
+      navigate("/");
+    }
+  }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [accountCheck, setAccountCheck] = useState(false);
@@ -24,7 +24,7 @@ useEffect(() => {
   console.log(usersArray);
   function signUp(e) {
     e.preventDefault();
-      let duplicateCheck = usersArray.filter((user) => {
+    let duplicateCheck = usersArray.filter((user) => {
       return user.email == email;
     });
     if (duplicateCheck.length == 0) {
@@ -36,7 +36,7 @@ useEffect(() => {
       usersArray.push(user);
       localStorage.setItem("users", JSON.stringify(usersArray));
       localStorage.setItem("user_id", JSON.stringify(user.user_id));
-      setAccountCheck(true)
+      setAccountCheck(true);
     } else {
       alert("already used email ");
     }

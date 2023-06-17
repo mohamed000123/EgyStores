@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // styling
 import styles from "./login.module.css";
 // routing
-import { NavLink, Navigate ,useNavigate} from "react-router-dom";
+import { NavLink ,useNavigate} from "react-router-dom";
 const Login = () => {
 // logged in user redirect
 const navigate = useNavigate();
@@ -15,9 +15,6 @@ useEffect(() => {
 }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [matchFound, setMatchFound] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   let usersArray = [];
   if (JSON.parse(localStorage.getItem("users")) != null) {
     usersArray = JSON.parse(localStorage.getItem("users"));
@@ -31,16 +28,10 @@ useEffect(() => {
     if (user.length == 1) {
       const user_id = user[0].user_id;
       localStorage.setItem("user_id", JSON.stringify(user_id));
-      setMatchFound(true);
-      setIsLoggedIn(true);
+      navigate("/")
     } else {
       alert("wrong password or email");
     }
-  }
-  useEffect(() => {
-  }, [isLoggedIn]);
-  if (matchFound) {
-    return <Navigate to="/" />;
   }
 
   return (
