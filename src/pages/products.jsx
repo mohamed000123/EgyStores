@@ -10,10 +10,6 @@ import useFetch from "../customhooks/fetchingApi";
 const Products = () => {
   const [newData, setNewData] = useState(null);
   const products = useFetch("https://fakestoreapi.com/products");
-  // const products = useFetch(
-  //   "http://api.fakeshop-api.com/products/getAllProducts"
-  // );
-  // const products = useFetch("https://api.storerestapi.com/products");
   localStorage.setItem("products", JSON.stringify(products));
   const showMenClothes = () => {
     const men = products.filter((item) => {

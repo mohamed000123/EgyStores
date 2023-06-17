@@ -42,6 +42,7 @@ const Faq = () => {
   ];
   return (
     <>
+      <h1>Frequently asked questions</h1>
       {questions.map((item) => {
         return (
           <div className={styles.questionContainer}>

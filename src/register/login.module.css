@@ -1,9 +1,13 @@
+body{
+    margin: 0px;
+}
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins',sans-serif;
-    height:80vh;
+    background-image: url("https://s3.amazonaws.com/js30-cdn/snowy-mountains-kracked.jpg");
+    height:100vh;
 }
 
 .form{

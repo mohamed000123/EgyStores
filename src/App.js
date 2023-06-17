@@ -39,7 +39,7 @@ const appRouter = createBrowserRouter(
         path="/home"
         element={
           <>
-            <Nav />
+            <Nav page="home"/>
             <Home />
           </>
         }

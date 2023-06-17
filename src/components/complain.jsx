@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import styles from "../styles/about.module.css";
 const Complain = () => {
   return (
@@ -8,7 +9,7 @@ const Complain = () => {
         <input placeholder="password"></input>
         <input placeholder="user name"></input>
         <br></br>
-        <button className={styles.btn}>submit</button>
+        <Button variant="contained">submit</Button>
       </form>
     </div>
   );

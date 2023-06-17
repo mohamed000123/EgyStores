@@ -33,10 +33,7 @@ const Login = () => {
   }
   //  redirecting already logged in user
   useEffect(() => {
-    // if (isLoggedIn) {
-      // Remove the login page from the browser history
-      window.history.replaceState(null, "", "/home");
-    // }
+    window.history.replaceState(null, "", "/home");
   }, [isLoggedIn]);
   if (matchFound) {
     return <Navigate to="/home" />;

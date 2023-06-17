@@ -3,7 +3,7 @@ import styles from "./login.module.css";
 // react
 import { useEffect, useState } from "react";
 // routing
-import {  Navigate } from "react-router-dom";
+import {  Navigate , NavLink} from "react-router-dom";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -62,6 +62,7 @@ const Signup = () => {
           <button id="btn" onClick={signUp}>
             Sign Up
           </button>
+          <NavLink to="/">already have account?</NavLink>
         </form>
       </div>
     </>

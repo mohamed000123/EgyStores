@@ -27,7 +27,7 @@ const navItems = [
 ];
 
 function Nav(props) {
-  const { window } = props;
+  const { window ,page} = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -56,9 +56,17 @@ function Nav(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }} className={"navBar"}>
+    <Box
+      sx={{
+        display: "flex",
+      }}
+      className={page=="home"?"navBar position": "navBar"}
+    >
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar
+        component="nav"
+        className={page=="home"?"transparent":null}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
