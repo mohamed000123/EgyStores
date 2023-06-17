@@ -16,14 +16,17 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
+
 const drawerWidth = 170;
 const navItems = [
-  <NavLink to="/">home</NavLink>,
-  <NavLink to="/products">products</NavLink>,
-  <NavLink to="/about">about</NavLink>,
+  <NavLink to="/home">Home</NavLink>,
+  <NavLink to="/products">Products</NavLink>,
+  <NavLink to="/cart">Cart</NavLink>,                             
+  <NavLink to="/about">About</NavLink>,               
+  <NavLink to="/">Logout</NavLink>,               
 ];
 
-function DrawerAppBar(props) {
+function Nav(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -109,7 +112,7 @@ function DrawerAppBar(props) {
   );
 }
 
-DrawerAppBar.propTypes = {
+Nav.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -117,4 +120,4 @@ DrawerAppBar.propTypes = {
   window: PropTypes.func,
 };
 
-export default DrawerAppBar;
+export default Nav;

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-const useFetch = () => {
+const useFetch = (url) => {
   const [data, setdata] = useState([]);
   async function fetchData() {
-    let response = await fetch("https://fakestoreapi.com/products");
+    let response = await fetch(url);
     response = await response.json();
     setdata(response);
   }
