@@ -1,27 +1,18 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.productcontainer {
-  width: 24%;
-  height: 350px;
-  text-align: center;
-  box-sizing: border-box;
-  margin-bottom: 5px;
+/* products *************/
+.container{
+  margin-top: 20px !important;
 }
 .product {
   width: 100%;
-  height: 100%;
-  border: 1px solid navy;
+  height: 350px;
   text-align: center;
 }
-.productcontainer h3 {
-  height: 20%;
+.product h3 {
+  height: 35%;
   margin: 0px;
   overflow: hidden;
 }
-.productcontainer img {
+.product img {
   width: 90%;
   height: 65%;
 }
@@ -32,7 +23,8 @@ a {
 a:focus {
   color: blue;
 }
-/* product details */
+
+/* product details ***********/
 
 #product {
   display: flex;
