@@ -1,20 +1,21 @@
 // react
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useRef} from "react";
 // styling
 import styles from "./login.module.css";
 // routing
-import { NavLink ,useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const Login = () => {
-// logged in user redirect
-const navigate = useNavigate();
-useEffect(() => {
-  const userid = localStorage.getItem("user_id");
-  if (userid) {
-    navigate("/");
-  }
-}, []);
+  // logged in user redirect
+  const navigate = useNavigate();
+  useEffect(() => {
+    const userid = localStorage.getItem("user_id");
+    if (userid) {
+      navigate("/");
+    }
+  }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const warning = useRef();
   let usersArray = [];
   if (JSON.parse(localStorage.getItem("users")) != null) {
     usersArray = JSON.parse(localStorage.getItem("users"));
@@ -28,9 +29,9 @@ useEffect(() => {
     if (user.length == 1) {
       const user_id = user[0].user_id;
       localStorage.setItem("user_id", JSON.stringify(user_id));
-      navigate("/")
+      navigate("/");
     } else {
-      alert("wrong password or email");
+      warning.current.style.display = "block";
     }
   }
 
@@ -57,6 +58,9 @@ useEffect(() => {
               setPassword(e.target.value);
             }}
           />
+          <p ref={warning} className={styles.warning}>
+            wrong password or email
+          </p>
           <button id="loginBtn" onClick={login}>
             Log In
           </button>

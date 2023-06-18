@@ -49,6 +49,15 @@ body{
 .form ::placeholder{
     color: #ccc;
 }
+
+.warning{
+    background-color: red;
+    color:white;
+    padding:10px 0px;
+    margin-top: 20px;
+    display:none
+}
+
 .form button{
     margin-top: 50px;
     width: 100%;

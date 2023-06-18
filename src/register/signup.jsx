@@ -1,7 +1,7 @@
 // styling
 import styles from "./login.module.css";
 // react
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useRef} from "react";
 // routing
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 const Signup = () => {
@@ -15,13 +15,11 @@ const Signup = () => {
   }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [accountCheck, setAccountCheck] = useState(false);
-
+  const warning = useRef()
   let usersArray = [];
   if (JSON.parse(localStorage.getItem("users")) != null) {
     usersArray = JSON.parse(localStorage.getItem("users"));
   }
-  console.log(usersArray);
   function signUp(e) {
     e.preventDefault();
     let duplicateCheck = usersArray.filter((user) => {
@@ -36,14 +34,12 @@ const Signup = () => {
       usersArray.push(user);
       localStorage.setItem("users", JSON.stringify(usersArray));
       localStorage.setItem("user_id", JSON.stringify(user.user_id));
-      setAccountCheck(true);
+      navigate("/");
     } else {
-      alert("already used email ");
+      warning.current.style.display="block"
     }
   }
-  if (accountCheck) {
-    return <Navigate to="/" />;
-  }
+
   return (
     <>
       <div className={styles.container}>
@@ -67,6 +63,7 @@ const Signup = () => {
               setPassword(e.target.value);
             }}
           />
+          <p ref={warning} className={styles.warning}>already used email</p>
           <button id="btn" onClick={signUp}>
             Sign Up
           </button>
