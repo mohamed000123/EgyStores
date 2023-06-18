@@ -27,7 +27,8 @@ navigate("/login")
             path="/"
             element={
               <>
-                <Nav page="home" />
+                {/* <Nav page="home" /> */}
+                <Nav />
                 <Home />
               </>
             }

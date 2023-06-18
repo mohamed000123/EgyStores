@@ -25,7 +25,7 @@ function Nav(props) {
     <NavLink to="/products">Products</NavLink>,
     <NavLink to="/cart">Cart</NavLink>,
     <NavLink to="/about">About</NavLink>,
-    <button className="logoutBtn" onClick={logout}>Logout</button>,
+    <button className="logoutBtn" onClick={logout}>LOGOUT</button>,
   ];
  function logout() {
    localStorage.removeItem("user_id");

@@ -2,20 +2,16 @@
 import Slider from "../components/imagesSlider";
 import Brands from "../components/brands";
 import HomeFooter from "../components/homeFooter";
-  // window.addEventListener("scroll", handelScroll);
-  // function handelScroll() {
-  //   if (window.scrollY >= window.innerHeight) {
-  //     console.log("Aaaaaaaaaaaa");
-  //   } else {
-  //     console.log("bbbbbbbbbbbbbbb");
-  //   }
-  // }
+import NewlyAdded from "../components/newlyAdded";
+import MostSaled from "../components/mostSaled";
 
 const Home = () => {
     return (
       <>
         <Slider />
         <Brands />
+        <NewlyAdded />
+        <MostSaled/>
         <HomeFooter />
       </>
     );

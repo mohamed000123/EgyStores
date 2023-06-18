@@ -1,3 +1,11 @@
+.aboutContainer {
+  background-image: url("../assets/imgs/arrangement-black-friday-shopping-carts-with-copy-space.jpg");
+  min-height: 100vh;
+  background-size: 100% 100%;
+}
+h1{
+  color:white
+}
 .about {
   text-align: center;
   margin: 40px 0px;
@@ -34,8 +42,3 @@
   margin-top: 50px;
 }
 
-.aboutContainer {
-  background-image: url("../assets/imgs/arrangement-black-friday-shopping-carts-with-copy-space.jpg");
-  min-height: 100vh;
-  background-size: 100% 100%;
-}
