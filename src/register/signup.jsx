@@ -26,15 +26,20 @@ const Signup = () => {
       return user.email == email;
     });
     if (duplicateCheck.length == 0) {
-      const user = {
-        user_id: Date.now(),
-        email: email,
-        password: password,
-      };
-      usersArray.push(user);
-      localStorage.setItem("users", JSON.stringify(usersArray));
-      localStorage.setItem("user_id", JSON.stringify(user.user_id));
-      navigate("/");
+     if(email && password){
+            const user = {
+              user_id: Date.now(),
+              email: email,
+              password: password,
+            };
+            usersArray.push(user);
+            localStorage.setItem("users", JSON.stringify(usersArray));
+            localStorage.setItem("user_id", JSON.stringify(user.user_id));
+            navigate("/");
+     }else{
+      warning.current.innerText = "please fill all fields";
+      warning.current.style.display = "block";
+     }
     } else {
       warning.current.style.display="block"
     }
