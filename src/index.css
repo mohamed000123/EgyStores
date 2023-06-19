@@ -127,3 +127,17 @@ text-decoration: underline;
 .calousel-item img{
 height: 100%;
 }
+
+/* toast */
+.toast {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.toast-disappear {
+display:none
+}

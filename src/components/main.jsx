@@ -13,6 +13,7 @@ import Nav from "./nav";
 import { useEffect } from "react";
 
 const Main = () => {
+//  protecting routes
 const navigate = useNavigate()
 useEffect(()=>{
 const userid = localStorage.getItem("user_id")
@@ -20,6 +21,7 @@ if (!userid) {
 navigate("/login")
 }
 },[])
+//
     return (
       <>
         <Routes>

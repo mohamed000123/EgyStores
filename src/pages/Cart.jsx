@@ -4,35 +4,52 @@ import { useEffect, useState } from "react";
 import styles from "../styles/cart.module.css";
 // mui
 import { Grid } from "@mui/material";
+import Toast from "../components/toast";
 const Cart = () => {
   const [user_products, setUser_products] = useState([]);
+  const [ispaid, setIsPaid] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [showDeleteToast, setShowDeleteToast] = useState(false);
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("cartItems"))) {
       setUser_products(JSON.parse(localStorage.getItem("cartItems")));
     }
-  }, []);
+  }, [ispaid]);
   function deleteProduct(id) {
+    setShowDeleteToast(true);
+    setTimeout(() => {
+      setShowDeleteToast(false);
+    }, 4000);
     const updatedProducts = user_products.filter((product) => {
       return product.id !== id;
     });
-    console.log(updatedProducts);
     setUser_products(updatedProducts);
-    console.log(user_products, "user_products");
     localStorage.setItem("cartItems", JSON.stringify(user_products));
-    console.log("after");
   }
 
   function pay(id) {
-    alert("your transaction is made successfully! thank you");
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 4000);
+    console.log(showToast);
     let productIndex = user_products.findIndex((product) => {
       return product.id == id;
     });
     user_products[productIndex].isPaid = true;
     localStorage.setItem("cartItems", JSON.stringify(user_products));
+    setIsPaid(true);
   }
 
   return (
     <>
+      {showToast && (
+        <Toast
+          message="your transaction is made successfully! thank you"
+          bgcolor="navy"
+        />
+      )}
+      {showDeleteToast && <Toast message="product deleted !" bgcolor="red" />}
       {user_products.length === 0 && (
         <h1>your cart is empty start shopping now</h1>
       )}
@@ -48,7 +65,11 @@ const Cart = () => {
               <img src={item.image} />
               <div className={styles.down}>
                 {!item.isPaid ? (
-                  <Grid container justifyContent="space-between" className="btns-container">
+                  <Grid
+                    container
+                    justifyContent="space-between"
+                    className="btns-container"
+                  >
                     <Grid item xs={4}>
                       <button
                         id={styles.payBtn}
@@ -71,7 +92,9 @@ const Cart = () => {
                     </Grid>
                   </Grid>
                 ) : (
-                  <p>your package will be delivered within 5 days</p>
+                  <p className={styles.delivery}>
+                    your package will be delivered within 5 days
+                  </p>
                 )}
               </div>
             </Grid>
