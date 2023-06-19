@@ -38,6 +38,7 @@ nav a.active {
   background-color:transparent !important ;
   box-shadow: none !important
 } */
+
 /* carousel */
 .slider-content {
   width:100%;
@@ -79,18 +80,27 @@ height:80% !important
 background-color:transparent;
 color:white
 }
-.list ul , .list2 ul{
+.list ul {
 list-style: none;
 }
-.list p , .list2 p{
+.list p {
 margin-bottom: 20px;
 color:white
 }
-.list ul li a,.list2 ul li a{
+.list2-item{
+  width: 100%;
+   display:flex;
+   flex-direction:column;
+   align-items:center
+}
+.list2-item h5{
+  margin:0px
+}
+.list ul li a,.list2-item{
 color: white;
 font-size: small;
 }
-.list ul li a:hover,.list2 ul li a:hover{
+.list ul li a:hover,.list2-item:hover{
 text-decoration: underline;
 }
 .footer{
@@ -103,7 +113,10 @@ text-decoration: underline;
 .footer a{
   color: white;
   margin:0px 10px;
-  text-decoration: underline;
+  text-decoration: none;
+}
+.footer a:hover{
+  text-decoration:underline;
 }
 
 /* brands */

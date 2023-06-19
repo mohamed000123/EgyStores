@@ -51,7 +51,7 @@ const Cart = () => {
       )}
       {showDeleteToast && <Toast message="product deleted !" bgcolor="red" />}
       {user_products.length === 0 && (
-        <h1>your cart is empty start shopping now</h1>
+        <h1 style={{color:"navy"}}>your cart is empty start shopping now</h1>
       )}
       <Grid container spacing={5} className={styles.container}>
         {user_products.map((item) => {

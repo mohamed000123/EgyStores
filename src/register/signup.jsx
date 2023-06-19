@@ -54,7 +54,7 @@ const Signup = () => {
         };
         usersArray.push(user);
         localStorage.setItem("users", JSON.stringify(usersArray));
-        localStorage.setItem("user_id", JSON.stringify(user.user_id));
+        localStorage.setItem("user_id", (user.user_id));
         navigate("/");
       }
     } else {

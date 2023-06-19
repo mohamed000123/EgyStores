@@ -73,6 +73,8 @@ body {
   padding: 5px 0px;
   margin-top: 20px;
   display: none;
+  border-radius: 5px;
+  text-indent: 10px;
 }
 
 .mailWarning {
@@ -81,6 +83,9 @@ body {
   padding: 5px 0px;
   margin-top: 20px;
   display: none;
+  border-radius: 5px;
+  padding-right: 5px;
+  text-indent: 10px;
 }
 
 .passwordWarning {
@@ -89,4 +94,7 @@ body {
   padding: 5px 0px;
   margin-top: 20px;
   display: none;
+  border-radius: 5px;
+  padding-right: 5px;
+  text-indent: 10px;
 }
