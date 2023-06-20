@@ -47,14 +47,15 @@ const Signup = () => {
         setIisValiedPassword(true);
       }
       if (isValiedMail && isValiedPassword) {
+        const user_id =uuidv4()
         const user = {
-          user_id: uuidv4(),
+          user_id: user_id,
           email: email,
           password: password,
         };
         usersArray.push(user);
         localStorage.setItem("users", JSON.stringify(usersArray));
-        localStorage.setItem("user_id", (user.user_id));
+        localStorage.setItem("user_id", (user_id));
         navigate("/");
       }
     } else {

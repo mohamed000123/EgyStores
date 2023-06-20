@@ -7,23 +7,33 @@ import { Grid } from "@mui/material";
 import Toast from "../components/toast";
 const Cart = () => {
   const [user_products, setUser_products] = useState([]);
+  const [cart_items, setCart_items] = useState([]);
   const [ispaid, setIsPaid] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [showDeleteToast, setShowDeleteToast] = useState(false);
+  const user_id = localStorage.getItem("user_id")
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("cartItems"))) {
-      setUser_products(JSON.parse(localStorage.getItem("cartItems")));
+      setCart_items(JSON.parse(localStorage.getItem("cartItems")));
     }
-  }, [ispaid]);
+  }, []);
+  useEffect(() => {
+    setUser_products(
+      cart_items.filter((item) => {
+       return(item.user_id== user_id);
+      })
+    );
+
+  }, [cart_items]);
+      console.log(user_products);
   function deleteProduct(id) {
     setShowDeleteToast(true);
     setTimeout(() => {
       setShowDeleteToast(false);
     }, 4000);
-    const updatedProducts = user_products.filter((product) => {
+    setUser_products(user_products.filter((product) => {
       return product.id !== id;
-    });
-    setUser_products(updatedProducts);
+    }));
     localStorage.setItem("cartItems", JSON.stringify(user_products));
   }
 
@@ -38,7 +48,7 @@ const Cart = () => {
     });
     user_products[productIndex].isPaid = true;
     localStorage.setItem("cartItems", JSON.stringify(user_products));
-    setIsPaid(true);
+    setIsPaid(!ispaid);
   }
 
   return (
@@ -56,7 +66,7 @@ const Cart = () => {
       <Grid container spacing={5} className={styles.container}>
         {user_products.map((item) => {
           return (
-            <Grid xs={6} sm={6} md={4} lg={3} item className={styles.product}>
+            <Grid xs={6} sm={6} md={4} lg={3} item className={styles.product} key={item.id}>
               <div className={styles.up}>
                 <h3>{item.title}</h3>
                 <p>{item.price} LE</p>
