@@ -20,7 +20,7 @@ const Cart = () => {
   useEffect(() => {
     setUser_products(
       cart_items.filter((item) => {
-       return(item.user_id== user_id);
+       return item.user_id == user_id 
       })
     );
 

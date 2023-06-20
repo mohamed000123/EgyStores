@@ -29,7 +29,7 @@ const Login = () => {
     });
     if (user.length == 1) {
       const user_id = user[0].user_id;
-      localStorage.setItem("user_id", JSON.stringify(user_id));
+      localStorage.setItem("user_id",(user_id));
       navigate("/");
     } else {
       warning.current.style.display = "block";
