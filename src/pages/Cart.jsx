@@ -25,16 +25,16 @@ const Cart = () => {
     );
 
   }, [cart_items]);
-      console.log(user_products);
   function deleteProduct(id) {
     setShowDeleteToast(true);
     setTimeout(() => {
       setShowDeleteToast(false);
     }, 4000);
-    setUser_products(user_products.filter((product) => {
+    const updatedProducts = user_products.filter((product) => {
       return product.id !== id;
-    }));
-    localStorage.setItem("cartItems", JSON.stringify(user_products));
+    });
+    setUser_products(updatedProducts);
+    localStorage.setItem("cartItems", JSON.stringify(updatedProducts));
   }
 
   function pay(id) {
