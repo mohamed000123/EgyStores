@@ -5,30 +5,16 @@ nav a {
   font-size: 20px;
   color: Navy;
 }
-nav button{
-font-size: 20px;
-color: Navy;
-background-color: transparent;
-border:none;
-margin-top: 11px;
-}
-nav {
-  background-color: #ccc;
-}
 
 nav a.active {
   color: gold;
   text-decoration: underline;
 }
-
-
-.nav-bar {
-  margin-bottom: 50px !important;
+.logout{
+  color:navy !important;
+  text-decoration: none !important;
 }
 
-.navBar {
-  margin-bottom: 0px !important;
-}
 /* nav bar with home */
 /* .position{
   position: absolute;

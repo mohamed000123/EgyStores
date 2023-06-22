@@ -25,9 +25,12 @@ function Nav(props) {
     <NavLink to="/products">Products</NavLink>,
     <NavLink to="/cart">Cart</NavLink>,
     <NavLink to="/about">About</NavLink>,
-    <button className="logoutBtn" onClick={logout}>LOGOUT</button>,
+    <NavLink  onClick={logout} className="logout">
+      Logout
+    </NavLink>,
   ];
- function logout() {
+ function logout(e) {
+    e.preventDefault();
    localStorage.removeItem("user_id");
    navigate("/login")
  }
