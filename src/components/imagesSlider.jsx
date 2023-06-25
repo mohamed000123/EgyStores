@@ -3,7 +3,7 @@ import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import one from "../assets/imgs/one.jpg"
 import two from "../assets/imgs/two.jpg"
-import three from "../assets/imgs/camera-photography-lens-black-zoom-canon-product-black-background-wallpaper-preview.jpg"
+import three from "../assets/imgs/camera.jpg"
 import four from "../assets/imgs/ring-jewelry-luxury-rich.jpg"
 import five from "../assets/imgs/ring-jewelry-luxury-rich2.jpg"
 import six from "../assets/imgs/flower-beats-floral-design.jpg"
