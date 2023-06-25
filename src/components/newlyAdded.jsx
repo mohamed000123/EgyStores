@@ -8,7 +8,7 @@ const NewlyAdded = () => {
   products.splice(0, 20);
   return (
     <>
-      <MultiCarsoule title={title} products={products} />{" "}
+      <MultiCarsoule title={title} products={products} />
     </>
   );
 };

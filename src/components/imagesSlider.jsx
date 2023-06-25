@@ -9,6 +9,7 @@ import five from "../assets/imgs/ring-jewelry-luxury-rich2.jpg"
 import six from "../assets/imgs/flower-beats-floral-design.jpg"
 import seven from "../assets/imgs/wallpaperflare.com_wallpaper.jpg"
 function Slider (props) {
+  // images
   var items = [
     {
       url: `${one}`,

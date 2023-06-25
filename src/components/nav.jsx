@@ -21,11 +21,12 @@ function Nav(props) {
   const navigate = useNavigate()
   const drawerWidth = 170;
   const navItems = [
+    // links
     <NavLink to="/">Home</NavLink>,
     <NavLink to="/products">Products</NavLink>,
     <NavLink to="/cart">Cart</NavLink>,
     <NavLink to="/about">About</NavLink>,
-    <NavLink  onClick={logout} className="logout">
+    <NavLink  onClick={logout} className="logout">,
       Logout
     </NavLink>,
   ];
@@ -138,3 +139,5 @@ Nav.propTypes = {
 };
 
 export default Nav;
+
+

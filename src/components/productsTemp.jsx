@@ -7,7 +7,6 @@ import styles from "../styles/products.module.css";
 import { Grid } from "@mui/material";
 
 const ProductsTemp = ({ products }) => {
-  console.log("products", products);
   return (
     <>
       <Grid container spacing={5} className={styles.container}>
