@@ -2,7 +2,6 @@
 import Login from "./register/login";
 import Signup from "./register/signup";
 // components
-import NotFound from "./components/notFound";
 import Main from "./components/main";
 // styling
 import "./index.css";
@@ -19,7 +18,7 @@ const appRouter = createBrowserRouter(
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/*" element={<Main />} />
-      <Route path="*" element={<NotFound />} />
+      
     </>
   )
 );

@@ -9,6 +9,7 @@ import Cart from "../pages/Cart";
 import Complain from "./complain";
 import Faq from "./faq";
 import Nav from "./nav";
+import NotFound from "./notFound";
 //react
 import { useEffect } from "react";
 
@@ -29,7 +30,6 @@ navigate("/login")
             path="/"
             element={
               <>
-                {/* <Nav page="home" /> */}
                 <Nav />
                 <Home />
               </>
@@ -74,6 +74,7 @@ navigate("/login")
             }
             path="/product/:id"
           ></Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </>
     );
