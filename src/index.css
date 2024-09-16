@@ -15,16 +15,6 @@ nav a.active {
   text-decoration: none !important;
 }
 
-/* nav bar with home */
-/* .position{
-  position: absolute;
-  top: 0px;
-}
-.transparent{
-  background-color:transparent !important ;
-  box-shadow: none !important
-} */
-
 /* carousel */
 .slider-content {
   width:100%;

@@ -81,15 +81,3 @@ navigate("/login")
 }
  
 export default Main;
-
-
-
-
-// const onScroll = (e) => {
-//     const { scrollTop } = e?.target || parentRef.current;
-//     if (scrollTop > 50 && !navBgColor && setNavBgColor) {
-//       setNavBgColor(true);
-//     } else if (scrollTop < 50 && navBgColor && setNavBgColor) {
-//       setNavBgColor(false);
-//     }
-//   }
