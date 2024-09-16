@@ -25,12 +25,12 @@ navigate("/login")
 //
     return (
       <>
+        <Nav />
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Nav />
                 <Home />
               </>
             }
@@ -39,7 +39,6 @@ navigate("/login")
             path="/cart"
             element={
               <>
-                <Nav />
                 <Cart />
               </>
             }
@@ -48,7 +47,6 @@ navigate("/login")
             path="/about"
             element={
               <>
-                <Nav />
                 <About />
               </>
             }
@@ -60,7 +58,6 @@ navigate("/login")
             path="/products"
             element={
               <>
-                <Nav />
                 <Products />
               </>
             }
@@ -68,7 +65,6 @@ navigate("/login")
           <Route
             element={
               <>
-                <Nav />
                 <ProductDetails />
               </>
             }
